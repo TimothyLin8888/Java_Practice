@@ -6,29 +6,35 @@ public class Examples {
         System.out.print("How much loops do you want: ");
         int numOfLoops = scan.nextInt();
         String message = "Hello World.";
-        for (int i = 1; i <= numOfLoops; i++){
-            if (i == 11 || i == 12 || i == 13){
-                System.out.println(i + "th " + message);
-            } else if (i % 10 == 1){
-                System.out.println(i + "st " + message);
-                } else if (i % 10 == 2){
-                    System.out.println(i + "nd " + message);
-                } else if (i % 10 == 3){
-                    System.out.println(i + "rd " + message);
-                } else {
-                    System.out.println(i + "th " + message);
-                }
-        }
+        String numberedMessage;
         try {
-        FileOutputStream fs = new FileOutputStream("Hello Worlds.txt");
-        PrintWriter pw = new PrintWriter(fs);
-        pw.write("Let's go!!!!");
+            FileOutputStream fs = new FileOutputStream("Hello Worlds.txt");
+            PrintWriter pw = new PrintWriter(fs);
+        for (int i = 1; i <= numOfLoops; i++){
+            String stringNumber = String.valueOf(i);
+            stringNumber = stringNumber.substring(Math.max(stringNumber.length() - 2, 0));
+            int newI = Integer.parseInt(stringNumber);
+            if (newI == 11 || newI == 12 || newI == 13){
+                numberedMessage = i + "th " + message;
+            } else if (i % 10 == 1){
+                numberedMessage = i + "st " + message;
+                } else if (i % 10 == 2){
+                numberedMessage = i + "nd " + message;
+                } else if (i % 10 == 3){
+                numberedMessage = i + "rd " + message;
+                } else {
+                numberedMessage = i + "th " + message;
+                }
+            
+        pw.write(numberedMessage + "\n");
+        }
         pw.close();
         fs.close();
-        } catch (FileNotFoundException fnf){
-            System.out.println("File not found.");
-        } catch (IOException io){
-            System.out.println("An IO exception");
-        }
+    } catch (FileNotFoundException fnf){
+        System.out.println("File not found.");
+    } catch (IOException io){
+        System.out.println("An IO exception");
+        
     }
+}
 }
