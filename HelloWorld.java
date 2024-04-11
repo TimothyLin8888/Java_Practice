@@ -1,6 +1,6 @@
 import java.util.*;
 import java.io.*;
-public class Examples {
+public class HelloWorld {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         System.out.print("How much loops do you want: ");
@@ -11,9 +11,9 @@ public class Examples {
             FileOutputStream fs = new FileOutputStream("Hello Worlds.txt");
             PrintWriter pw = new PrintWriter(fs);
         for (int i = 1; i <= numOfLoops; i++){
-            String stringNumber = String.valueOf(i);
-            stringNumber = stringNumber.substring(Math.max(stringNumber.length() - 2, 0));
-            int newI = Integer.parseInt(stringNumber);
+            String stringNumber = String.valueOf(i); //this turns the integer into a string
+            stringNumber = stringNumber.substring(Math.max(stringNumber.length() - 2, 0)); //this makes it only do the last two digits of the string
+            int newI = Integer.parseInt(stringNumber); //then turns it back into an integer
             if (newI == 11 || newI == 12 || newI == 13){
                 numberedMessage = i + "th " + message;
             } else if (i % 10 == 1){
