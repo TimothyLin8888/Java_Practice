@@ -1,0 +1,6 @@
+name,ID,isPaidMember,age
+John,54394,true,32
+Jake,73849,false,21
+Tom,81215,true,26
+Mei,57101,false,23
+Dareth,57162,false
