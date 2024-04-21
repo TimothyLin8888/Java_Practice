@@ -94,7 +94,7 @@ public static void main(String[] args) {
     boolean run = true;
     ArrayList<Account> accounts = new ArrayList<>();
     try {
-        File file = new File("accounts.csv"); //opening accounts.csv
+        File file = new File("accounts.txt"); //opening accounts.csv
         try (Scanner scan = new Scanner(file)) {
           while (scan.hasNext()) { //this loop should only just put all the accounts into a list
               String line = scan.nextLine();
