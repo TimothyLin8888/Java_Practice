@@ -2,6 +2,8 @@ import java.util.*;
 import java.io.*;
 public class HelloWorld {
     public static void main(String[] args) {
+        //HashMap<>map = new HashMap();
+        //map.put()
         try (Scanner scan = new Scanner(System.in)) {
             System.out.print("How much loops do you want: ");
             int numOfLoops = scan.nextInt();
